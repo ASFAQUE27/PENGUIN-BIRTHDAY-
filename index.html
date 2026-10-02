@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <!-- Importing modern minimal fonts and a beautiful cursive font for romance -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #2b0b30, #61184c, #9c2162, #ff275d, #ffdf85);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        /* Smooth animated gradient background */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating Light Particles Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            display: block;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatUp 15s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(110vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* Interactive Initial Screen: Gift Box */
+        .gift-wrapper {
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .gift-wrapper:hover {
+            transform: scale(1.1);
+        }
+
+        .gift-box {
+            position: relative;
+            width: 160px;
+            height: 150px;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: pulseGlow 2s infinite;
+        }
+
+        .gift-lid {
+            position: absolute;
+            top: -25px;
+            left: -10px;
+            width: 180px;
+            height: 45px;
+            background: linear-gradient(135deg, #ff6666, #b30000);
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform-origin: bottom right;
+        }
+
+        .gift-ribbon-v {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .gift-ribbon-h {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .gift-bow {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, #ffd700, #b8860b);
+            clip-path: polygon(50% 50%, 0 0, 0 100%, 50% 50%, 100% 0, 100% 100%);
+            z-index: 3;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .tap-text {
+            margin-top: 50px;
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeInOut 2s infinite;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            }
+
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 20px 50px rgba(255, 77, 77, 0.6);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Festive Bunting */
+        .bunting-container {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .flag {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 45px solid var(--c);
+            display: inline-block;
+            animation: swing 3s ease-in-out infinite alternate;
+            transform-origin: top center;
+            animation-delay: var(--d);
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(10deg);
+            }
+
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        /* Glassmorphism Main Card */
+        .glass-card {
+            display: none;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(80px) scale(0.9) rotateX(10deg);
+            transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 90%;
+        }
+
+        .glass-card.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0deg);
+        }
+
+        .card-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            animation: floatImage 4s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 5px;
+            color: #ffb3c6;
+            text-shadow: 0 2px 15px rgba(255, 179, 198, 0.6);
+            background: -webkit-linear-gradient(45deg, #ff9a9e, #fecfef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        p.subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 35px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .slideshow-container {
+            height: 80px;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #ffd1dc;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-text {
+            position: absolute;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .slide-text.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Beautiful interactive button */
+        .btn-interactive {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            border: none;
+            padding: 16px 40px;
+            color: white;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 65, 108, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: 'Outfit', sans-serif;
+            position: relative;
+            overflow: hidden;
+            outline: none;
+            letter-spacing: 1px;
+        }
+
+        .btn-interactive::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: skewX(-25deg);
+            transition: left 0.6s ease;
+        }
+
+        .btn-interactive:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 65, 108, 0.6);
+        }
+
+        .btn-interactive:hover::before {
+            left: 200%;
+        }
+
+        .btn-interactive:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        /* Modal Overlay for intimate message */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 50px 40px;
+            border-radius: 25px;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            transform: translateY(60px) scale(0.9);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient glow in modal */
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 179, 198, 0.1) 0%, transparent 60%);
+            animation: slowSpin 10s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes slowSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #ffb3c6;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: -webkit-linear-gradient(45deg, #fff, #ffb3c6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal-content p {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.95);
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-close {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .btn-close:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Gift opening animations */
+        .gift-wrapper.opened .gift-lid {
+            transform: translateY(-80px) rotate(-15deg) scale(1.1);
+            opacity: 0;
+        }
+
+        .gift-wrapper.opened .gift-bow {
+            transform: translateY(-90px) rotate(15deg) scale(1.1);
+            opacity: 0;
+        }
+
+        .gift-wrapper.opened .gift-box {
+            transform: translateY(20px) scale(0.8);
+            opacity: 0;
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .gift-wrapper.opened .tap-text {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Confetti Burst Logic Elements */
+        .burst-heart {
+            position: absolute;
+            pointer-events: none;
+            z-index: 100;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+        }
+
+        /* -------------------------------------
+           NEW: PROFESSIONAL 3D CAKE SCENE
+           ------------------------------------- */
+
+        .cake-scene {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .cake-scene.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Text Pulsing instruction */
+        .cake-instruction {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ffdf85;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 223, 133, 0.8);
+            animation: pulseText 1.5s infinite alternate;
+        }
+
+        @keyframes pulseText {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.05);
+                opacity: 1;
+                text-shadow: 0 0 20px rgba(255, 223, 133, 1);
+            }
+        }
+
+        /* The Interactive Cake Wrapper */
+        .cake-wrapper {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+            perspective: 1200px;
+            transition: transform 0.3s ease;
+        }
+
+        .cake-wrapper:hover {
+            transform: scale(1.05);
+        }
+
+        /* The 3D Cake Container to handle the split */
+        .cake-3d-container {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            /* Allows us to handle left/right split easily */
+        }
+
+        .cake-half {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Bouncy smooth apart slide */
+        }
+
+        /* Clip path to cleanly slice the cake down the middle */
+        .cake-half.left {
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+        }
+
+        .cake-half.right {
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+
+        /* Animate the split when cut class is added */
+        .cake-wrapper.cut .cake-half.left {
+            transform: translateX(-70px) rotateY(-25deg) rotateZ(-5deg);
+        }
+
+        .cake-wrapper.cut .cake-half.right {
+            transform: translateX(70px) rotateY(25deg) rotateZ(5deg);
+        }
+
+        /* Subtle shake of the cake upon knife impact */
+        .cake-3d-container.shaking {
+            animation: cakeShake 0.1s 3;
+        }
+
+        @keyframes cakeShake {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            25% {
+                transform: translateX(calc(-50% - 3px));
+            }
+
+            50% {
+                transform: translateX(-50%);
+            }
+
+            75% {
+                transform: translateX(calc(-50% + 3px));
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Magical glowing light burst from inside the split cake */
+        .magical-light {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 223, 133, 0.8) 30%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10;
+            animation: lightBurst 1.5s ease-out forwards;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes lightBurst {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* Vector SVG Flame Animations */
+        .svg-flame {
+            transform-origin: 100px 24px;
+            animation: svgFlicker 0.1s infinite alternate;
+        }
+
+        .svg-flame-glow {
+            transform-origin: 100px 15px;
+            animation: svgGlow 0.1s infinite alternate;
+        }
+
+        @keyframes svgFlicker {
+            0% {
+                transform: scale(1) rotate(-2deg);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: scale(1.05) rotate(2deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes svgGlow {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 0.9;
+            }
+        }
+
+        /* Vector Knife Wrapper */
+        .knife-wrapper {
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 200px;
+            z-index: 20;
+            opacity: 0;
+            pointer-events: none;
+            filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.5));
+        }
+
+        .knife-wrapper.slashing {
+            animation: elegantCut 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes elegantCut {
+            0% {
+                top: -300px;
+                transform: translateX(50px) rotate(45deg);
+                opacity: 0;
+            }
+
+            20% {
+                top: -80px;
+                transform: translateX(-50%) rotate(0deg);
+                opacity: 1;
+            }
+
+            35% {
+                top: -80px;
+                transform: translateX(-50%) rotate(0deg);
+                opacity: 1;
+            }
+
+            55% {
+                top: 120px;
+                transform: translateX(-50%) rotate(0deg);
+                opacity: 1;
+            }
+
+            75% {
+                top: 80px;
+                transform: translateX(20px) rotate(30deg);
+                opacity: 1;
+            }
+
+            100% {
+                top: -150px;
+                transform: translateX(100px) rotate(60deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+
+            .glass-card {
+                padding: 40px 20px;
+            }
+
+            .card-img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .modal-content p {
+                font-size: 1.1rem;
+            }
+
+            .modal-content h2 {
+                font-size: 3rem;
+            }
+
+            .cake-wrapper {
+                transform: scale(0.85);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Festive Bunting -->
+    <div class="bunting-container">
+        <div class="flag" style="--d: 0.1s; --c: #ff4d4d;"></div>
+        <div class="flag" style="--d: 0.2s; --c: #ffd700;"></div>
+        <div class="flag" style="--d: 0.3s; --c: #ffb3c6;"></div>
+        <div class="flag" style="--d: 0.4s; --c: #66ccff;"></div>
+        <div class="flag" style="--d: 0.5s; --c: #ff4d4d;"></div>
+        <div class="flag" style="--d: 0.6s; --c: #ffd700;"></div>
+        <div class="flag" style="--d: 0.7s; --c: #ffb3c6;"></div>
+        <div class="flag" style="--d: 0.8s; --c: #66ccff;"></div>
+        <div class="flag" style="--d: 0.9s; --c: #ff4d4d;"></div>
+        <div class="flag" style="--d: 1.0s; --c: #ffd700;"></div>
+        <div class="flag" style="--d: 1.1s; --c: #ffb3c6;"></div>
+        <div class="flag" style="--d: 1.2s; --c: #66ccff;"></div>
+    </div>
+
+    <!-- Ambient floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+
+        <!-- Interactive Gift Reveal Screen -->
+        <div class="gift-wrapper" id="giftWrapper" onclick="revealGift()">
+            <div class="gift-box">
+                <div class="gift-ribbon-h"></div>
+                <div class="gift-ribbon-v"></div>
+                <div class="gift-lid"></div>
+                <div class="gift-bow"></div>
+            </div>
+            <div class="tap-text">Tap to open</div>
+        </div>
+
+        <!-- NEW: Professional 3D Cake Scene -->
+        <div class="cake-scene" id="cakeScene">
+            <h2 class="cake-instruction" id="cakeInstruction">Make a Wish & Tap to Cut!</h2>
+
+            <div class="cake-wrapper" id="cakeWrapper" onclick="cutCakeSequence()">
+                <!-- SVG Cake doesn't need external HTML cake plate -->
+
+                <!-- Professional SVG Vector Knife -->
+                <div class="knife-wrapper" id="cakeKnife">
+                    <svg viewBox="0 0 40 200" width="40" height="200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#aaaaaa" />
+                                <stop offset="50%" stop-color="#ffffff" />
+                                <stop offset="100%" stop-color="#cccccc" />
+                            </linearGradient>
+                            <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#3e2723" />
+                                <stop offset="50%" stop-color="#5d4037" />
+                                <stop offset="100%" stop-color="#3e2723" />
+                            </linearGradient>
+                            <filter id="knifeShadow">
+                                <feDropShadow dx="2" dy="5" stdDeviation="3" flood-opacity="0.3" />
+                            </filter>
+                        </defs>
+                        <g filter="url(#knifeShadow)">
+                            <!-- Blade -->
+                            <path d="M 18 63 L 22 63 L 22 180 Q 20 200 18 190 Z" fill="url(#bladeGrad)" />
+                            <!-- Blade Edge Highlight -->
+                            <path d="M 21 63 L 22 63 L 22 180 Q 20 200 21 190 Z" fill="#ffffff" opacity="0.8" />
+                            <!-- Handle -->
+                            <rect x="14" y="0" width="12" height="60" fill="url(#handleGrad)" rx="2" />
+                            <!-- Gold guard -->
+                            <rect x="12" y="55" width="16" height="8" fill="#d4af37" rx="2" />
+                            <!-- Gold pommel -->
+                            <ellipse cx="20" cy="5" rx="7" ry="5" fill="#d4af37" />
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- 3D Cake Container (Will be cloned into left and right halves by JS for splitting) -->
+                <div class="cake-3d-container" id="cakeContainer">
+                    <div class="cake-half left" id="cakeLeft">
+                        <!-- Content injected by JS -->
+                    </div>
+                    <div class="cake-half right" id="cakeRight">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Romantic Birthday Card -->
+        <div class="glass-card" id="birthdayCard">
+            <img src="aditi.jpg" alt="Our Love" class="card-img">
+
+            <h1>Happy Birthday, Aditi!</h1>
+            <p class="subtitle">To the absolute love of my life ❤️</p>
+
+            <div class="slideshow-container">
+                <div class="slide-text active">"Happy Birthday to my favorite person."</div>
+                <div class="slide-text">"Every moment with you feels like magic."</div>
+                <div class="slide-text">"You make my world so incredibly beautiful."</div>
+                <div class="slide-text">"I fall in love with you more every single day."</div>
+            </div>
+
+            <button class="btn-interactive" onclick="openMessageModal()">Read My Heart</button>
+        </div>
+
+    </div>
+
+    <!-- Hidden Deep Emotional Message Modal -->
+    <div class="modal-overlay" id="messageModal">
+        <div class="modal-content">
+            <h2>My Dearest,</h2>
+            <p>
+                On your special day, I want you to know just how incredibly deeply I love you.
+                You are my greatest blessing, my safest place, and my favorite adventure.
+                I cherish every smile, every laugh, and every quiet moment we share.
+                <br><br>
+                May this year bring you as much joy, peace, and endless happiness as you
+                bring into my life every single day. I'll always be here to hold your hand
+                through it all.
+                <br><br>
+                Happy Birthday, darling. I love you to the moon and back.
+            </p>
+            <button class="btn-close" onclick="closeMessageModal()">Close Message</button>
+        </div>
+    </div>
+
+    <script>
+        // Setup Ambient Floating Particles
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 45;
+        const shapes = ['🎈', '🎉', '🎂', '🎁', '✨', '💖', '🌸', '💫', '❤️'];
+
+        for (let i = 0; i < particleCount; i++) {
+            createAmbientParticle();
+        }
+
+        function createAmbientParticle() {
+            const particle = document.createElement('div');
+            particle.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+            particle.className = 'particle';
+
+            // Random properties for organic feel
+            const size = Math.random() * 20 + 10;
+            particle.style.fontSize = size + 'px';
+            particle.style.left = Math.random() * 100 + 'vw';
+
+            const duration = Math.random() * 15 + 15; // 15s to 30s
+            particle.style.animationDuration = duration + 's';
+            particle.style.animationDelay = (Math.random() * 10 - 5) + 's';
+
+            particlesContainer.appendChild(particle);
+        }
+
+        // Logic for Gift Reveal
+        function revealGift() {
+            const gift = document.getElementById('giftWrapper');
+            const cakeScene = document.getElementById('cakeScene');
+
+            // Add animation class
+            gift.classList.add('opened');
+
+            // Trigger spectacular burst
+            triggerBurst(40); // Initial smaller burst
+
+            // Transition to Cake scene
+            setTimeout(() => {
+                gift.style.display = 'none';
+                cakeScene.classList.add('active');
+            }, 900);
+        }
+
+        // Orchestrate the Cake Cutting Sequence
+        function cutCakeSequence() {
+            const cakeWrapper = document.getElementById('cakeWrapper');
+            const cakeContainer = document.getElementById('cakeContainer');
+            const knife = document.getElementById('cakeKnife');
+            const instruction = document.getElementById('cakeInstruction');
+            const card = document.getElementById('birthdayCard');
+            const cakeScene = document.getElementById('cakeScene');
+
+            // Prevent multiple clicks
+            if (cakeWrapper.classList.contains('cut')) return;
+
+            // 1. Hide instruction text
+            instruction.style.opacity = '0';
+
+            // 2. Blow out the candles with a smooth transition
+            const flames = document.querySelectorAll('.svg-flame, .svg-flame-glow');
+            flames.forEach(f => {
+                f.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                f.style.opacity = '0';
+                f.style.transform = 'scale(0)';
+            });
+
+            // 3. Bring down the beautiful vector knife
+            setTimeout(() => {
+                knife.classList.add('slashing');
+            }, 600);
+
+            // 4. Knife hits cake -> Brief shake force impact
+            setTimeout(() => {
+                cakeContainer.classList.add('shaking');
+            }, 1400);
+
+            // 5. Knife completely cuts, trigger split, magical light burst and confetti
+            setTimeout(() => {
+                cakeContainer.classList.remove('shaking');
+                cakeWrapper.classList.add('cut');
+
+                // Add magical light burst from the core of the split
+                const light = document.createElement('div');
+                light.className = 'magical-light';
+                cakeScene.appendChild(light);
+
+                // Huge Confetti Burst
+                triggerBurst(100);
+            }, 1700);
+
+            // 6. Fade out Cake Scene and reveal the Birthday Card elegantly
+            setTimeout(() => {
+                cakeScene.style.transition = 'opacity 1.5s ease';
+                cakeScene.style.opacity = '0';
+                setTimeout(() => {
+                    cakeScene.style.display = 'none';
+                    card.classList.add('show');
+                    startSlideshow();
+                }, 1500);
+            }, 4500); // Plenty of time to enjoy the split animation
+        }
+
+        // Spectacular Heart & Confetti Burst Effect
+        function triggerBurst(count) {
+            const burstCount = count || 60;
+            const burstEmojis = ['🎈', '🎉', '✨', '💖', '🎁', '🎊', '❤️'];
+            for (let i = 0; i < burstCount; i++) {
+                const burstItem = document.createElement('div');
+                burstItem.className = 'burst-heart';
+                burstItem.innerHTML = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
+
+                // Position at center
+                burstItem.style.left = '50%';
+                burstItem.style.top = '50%';
+                burstItem.style.transform = 'translate(-50%, -50%)';
+                burstItem.style.fontSize = (Math.random() * 25 + 15) + 'px';
+
+                // Physics calculation for burst
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = Math.random() * 200 + 80;
+                const tx = Math.cos(angle) * velocity;
+                // Add a gravity arc feel by shifting Y negative
+                const ty = Math.sin(angle) * velocity - 150;
+
+                burstItem.animate([
+                    { transform: 'translate(-50%, -50%) scale(0)', opacity: 0 },
+                    { transform: 'translate(-50%, -50%) scale(1.5)', opacity: 1, offset: 0.2 },
+                    { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0.8) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 1200 + 1000,
+                    easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+                    fill: 'forwards'
+                });
+
+                document.body.appendChild(burstItem);
+
+                // Cleanup
+                setTimeout(() => burstItem.remove(), 2500);
+            }
+        }
+
+        // Slideshow Logic for romantic quotes
+        let currentSlideIdx = 0;
+        function startSlideshow() {
+            const slides = document.querySelectorAll('.slide-text');
+            if (slides.length === 0) return;
+
+            setInterval(() => {
+                slides[currentSlideIdx].classList.remove('active');
+                currentSlideIdx = (currentSlideIdx + 1) % slides.length;
+                slides[currentSlideIdx].classList.add('active');
+            }, 3500); // Change text every 3.5 seconds
+        }
+
+        // Modal Logic
+        function openMessageModal() {
+            document.getElementById('messageModal').classList.add('active');
+        }
+
+        function closeMessageModal() {
+            document.getElementById('messageModal').classList.remove('active');
+        }
+
+        // Initialize Cake DOM Structure (Clone identical tiers into left and right halves for clip-path splitting)
+        document.addEventListener('DOMContentLoaded', () => {
+            const cakeDOM = `
+<svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cccccc"/>
+    </linearGradient>
+    <linearGradient id="plateRimGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0e0e0"/>
+      <stop offset="100%" stop-color="#999999"/>
+    </linearGradient>
+    <linearGradient id="bottomTierGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8e1e55"/>
+      <stop offset="50%" stop-color="#c12973"/>
+      <stop offset="100%" stop-color="#69143e"/>
+    </linearGradient>
+    <linearGradient id="bottomTierTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc3e8a"/>
+      <stop offset="100%" stop-color="#aa2463"/>
+    </linearGradient>
+    <linearGradient id="topTierGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#eac6d0"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d9b1bd"/>
+    </linearGradient>
+    <linearGradient id="topTierTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fdf0f4"/>
+    </linearGradient>
+    <linearGradient id="dripGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fae3eb"/>
+    </linearGradient>
+    <linearGradient id="candleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dddddd"/>
+    </linearGradient>
+    <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff178" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ff9800" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Plate -->
+  <ellipse cx="100" cy="180" rx="95" ry="20" fill="url(#plateRimGrad)" filter="url(#dropShadow)"/>
+  <ellipse cx="100" cy="177" rx="85" ry="16" fill="url(#plateGrad)"/>
+  
+  <!-- Shadow under bottom tier -->
+  <ellipse cx="100" cy="170" rx="70" ry="18" fill="#501030" opacity="0.6" filter="url(#dropShadow)"/>
+  
+  <!-- BOTTOM TIER -->
+  <path d="M 30 120 L 30 170 A 70 18 0 0 0 170 170 L 170 120 Z" fill="url(#bottomTierGrad)"/>
+  <ellipse cx="100" cy="120" rx="70" ry="18" fill="url(#bottomTierTopGrad)"/>
+  
+  <!-- Bottom Icing Detail -->
+  <g fill="#ffeaf0" filter="url(#dropShadow)">
+    <circle cx="35" cy="170" r="5"/><circle cx="45" cy="174" r="5"/><circle cx="55" cy="177" r="5"/><circle cx="65" cy="180" r="5"/>
+    <circle cx="75" cy="182" r="5"/><circle cx="85" cy="183.5" r="5"/><circle cx="95" cy="184.5" r="5"/><circle cx="105" cy="184.5" r="5"/>
+    <circle cx="115" cy="183.5" r="5"/><circle cx="125" cy="182" r="5"/><circle cx="135" cy="180" r="5"/><circle cx="145" cy="177" r="5"/>
+    <circle cx="155" cy="174" r="5"/><circle cx="165" cy="170" r="5"/>
+  </g>
+
+  <!-- TOP TIER -->
+  <path d="M 45 75 L 45 120 A 55 14 0 0 0 155 120 L 155 75 Z" fill="url(#topTierGrad)"/>
+  <ellipse cx="100" cy="75" rx="55" ry="14" fill="url(#topTierTopGrad)"/>
+
+  <!-- Drips using exact SVG Path -->
+  <path d="M 45 75 A 55 14 0 0 0 155 75 C 155 85, 150 90, 145 80 C 140 105, 135 105, 130 85 C 125 90, 120 110, 115 88 C 110 95, 100 95, 95 85 C 90 100, 80 115, 75 90 C 70 80, 65 105, 60 85 C 55 90, 50 85, 45 75 Z" fill="url(#dripGrad)" filter="url(#dropShadow)"/>
+
+  <!-- Sprinkles -->
+  <g stroke-linecap="round" stroke-width="3">
+    <line x1="100" y1="65" x2="105" y2="67" stroke="#ff4d4d"/>
+    <line x1="80" y1="70" x2="83" y2="75" stroke="#3498db"/>
+    <line x1="120" y1="72" x2="125" y2="70" stroke="#f1c40f"/>
+    <line x1="110" y1="80" x2="105" y2="83" stroke="#9b59b6"/>
+    <line x1="70" y1="78" x2="75" y2="76" stroke="#2ecc71"/>
+    <line x1="90" y1="76" x2="88" y2="80" stroke="#ff4d4d"/>
+    <line x1="135" y1="78" x2="132" y2="80" stroke="#e67e22"/>
+  </g>
+
+  <!-- CANDLE -->
+  <ellipse cx="100" cy="75" rx="10" ry="3" fill="#e0d5d8"/>
+  <rect x="94" y="30" width="12" height="45" fill="url(#candleGrad)" rx="2"/>
+  <path d="M 94 35 L 106 45 M 94 45 L 106 55 M 94 55 L 106 65 M 94 65 L 106 75" stroke="#ff4d4d" stroke-width="3"/>
+  <line x1="100" y1="30" x2="100" y2="24" stroke="#333" stroke-width="2"/>
+  
+  <!-- FLAME -->
+  <circle cx="100" cy="15" r="15" fill="url(#flameGlow)" class="svg-flame-glow"/>
+  <g class="svg-flame">
+    <path d="M 100 8 Q 104 18 100 24 Q 96 18 100 8 Z" fill="#ffeb3b"/>
+    <path d="M 100 12 Q 102 18 100 22 Q 98 18 100 12 Z" fill="#ffffff"/>
+  </g>
+</svg>
+            `;
+
+            document.getElementById('cakeLeft').innerHTML = cakeDOM;
+            document.getElementById('cakeRight').innerHTML = cakeDOM;
+        });
+    </script>
+</body>
+
+</html>
